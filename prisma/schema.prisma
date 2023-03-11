@@ -23,6 +23,6 @@ model Transaction {
 model Category {
   id            String      @id @default(uuid())
   name          String
-  transaction   Transaction @relation(fields: [transactionId], references: [id])
+  transaction   Transaction @relation(fields: [transactionId], references: [id], onDelete: Cascade)
   transactionId String
 }

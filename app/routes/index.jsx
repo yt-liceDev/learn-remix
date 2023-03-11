@@ -29,26 +29,13 @@ export const action = async ({ request }) => {
   const formData = await request.formData()
   const id = formData.get("id")
 
-  await db.transaction.update({
-    where: {
-      id,
-    },
-    data: {
-      category: {
-        deleteMany: {
-          transactionId: id,
-        },
+  return json(
+    await db.transaction.delete({
+      where: {
+        id,
       },
-    },
-  })
-
-  await db.transaction.delete({
-    where: {
-      id,
-    },
-  })
-
-  return null
+    }),
+  )
 }
 
 export default function Index() {
