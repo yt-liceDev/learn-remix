@@ -39,7 +39,6 @@ export default function App() {
   return (
     <Document>
       <main className="p-8">
-        <h1 className="text-4xl mb-8 font-bold text-center">My Budget</h1>
         <Outlet />
       </main>
     </Document>

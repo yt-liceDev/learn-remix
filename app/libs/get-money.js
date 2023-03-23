@@ -1,6 +1,6 @@
 export function getMoney(data, type) {
   return data.reduce((total, curr) => {
-    const category = curr.category[0].name
+    const category = curr.category.name
     if (type === "balance") {
       if (category === "income") return (total += curr.money)
       total -= curr.money
